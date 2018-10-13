@@ -1,0 +1,46 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+    #result {
+        font-size: 25px;
+        font-family: monospace;
+        margin-left: 450px;
+        border: 5px solid pink;
+        display: inline-block;
+    }
+</style>
+<input id='number'> Input your number</input>
+<br>
+<br>
+<input type='button' onClick="ftoc()" value="Fahrenheit">
+<input type='button' onClick="ctof()" value="Celcius">
+<button id="url">GetUrl</button>
+<p>
+    <span id="result"></span>
+</p>
+<br>
+<h2></h2>
+
+
+<script>
+    $('#url').click(function () {
+        document.getElementsByTagName("h2")[0].innerHTML = document.URL;
+    });
+
+    function ctof() {
+        var data = document.getElementById('number').value;
+
+        var f = 9 / 5 * data + 32;
+
+        document.getElementById('result').innerHTML = data + " Celcius is " + f + " Fahrenheit";
+        $('#result').hide().fadeIn(2000);
+
+    }
+    function ftoc() {
+        var data = document.getElementById('number').value;
+
+        var c = 5 / 9 * (data - 32);
+        document.getElementById('result').innerHTML = data + " Fahrenheit is " + c + " Celcius";
+        $('#result').hide().fadeIn(2000);
+
+    }
+</script>
